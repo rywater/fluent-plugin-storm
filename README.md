@@ -1,6 +1,6 @@
-## fluent-plugin-storm
+# fluent-plugin-storm
 
-[storm](https://storm.apache.org/) [stats](https://github.com/apache/storm/blob/master/STORM-UI-REST-API.md#apiv1topologyid-get) input plugin
+[Storm](https://storm.apache.org/) [stats api](http://storm.apache.org/releases/current/STORM-UI-REST-API.html) input plugin for fluentd
 
 ## Installation
 
