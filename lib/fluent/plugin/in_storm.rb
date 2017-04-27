@@ -1,12 +1,12 @@
 
 module Fluent
   class StormInput < Fluent::Input
-    Fluent::Plugin.register_input('storm_rest_api', self)
+    Fluent::Plugin.register_input('storm', self)
     config_param :tag, :string, default: 'storm'
     config_param :interval, :integer, default: 60
     config_param :url, :string, default: 'http://localhost:8080'
     config_param :user, :string, default: nil
-    config_param :password, :string, default: nil
+    config_param :password, :string, default: nil, secret: true
     config_param :window, :string, default: nil
     config_param :sys, :string, default: nil
 
