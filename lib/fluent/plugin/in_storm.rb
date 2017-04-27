@@ -47,7 +47,7 @@ module Fluent
     def execute
       @time = Engine.now
       summary_uri = to_uri @url, '/api/v1/topology/summary'
-      @log.info("Requesting Storm metrics summary from #{summary_uri}")
+      @log.debug("Requesting Storm metrics summary from #{summary_uri}")
       response = do_request(summary_uri)
       response_body = parse_json(response.body)
       response_body['topologies'].each do |topology|
@@ -65,7 +65,7 @@ module Fluent
       # We don't need this data for metrics
       topology_resp.delete('visualizationTable')
       topology_resp.delete('configuration')
-      @log.info("Emitting data: #{@tag} #{@time} #{topology_resp}")
+      @log.debug("Emitting data: #{@tag} #{@time} #{topology_resp}")
       Engine.emit(@tag, @time, topology_resp)
     end
 
